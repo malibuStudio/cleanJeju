@@ -1,0 +1,12 @@
+template(name="map")
+  .map-wrapper
+    .gradient
+    #map
+    .map-prevent-touch
+    .map-list
+      ul
+        +each trashes
+          li
+            i.icon.marker
+            span {{properties.name}}
+            span ({{properties.density}})

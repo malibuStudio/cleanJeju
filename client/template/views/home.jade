@@ -16,18 +16,22 @@ template(name="home")
         .p-body-inner
           .tab-view.active(data-tab-name="trashList")
             +trashList
+          .tab-view(data-tab-name="globalMap")
+            +map
+          .tab-view(data-tab-name="activity")
           .tab-view(data-tab-name="myPage")
             +myPage
+
 
 
       .p-tabbar
         .p-tabbar-button(data-tab-target="trashList")
           i.ion-ios-trash-outline
           span 타임라인
-        .p-tabbar-button(data-tab-target="")
+        .p-tabbar-button(data-tab-target="globalMap")
           i.ion-ios-world-outline
           span 맵
-        .p-tabbar-button(data-tab-target="")
+        .p-tabbar-button(data-tab-target="activity")
           //- i.ion-ios-filing-outline
           i.ion-ios-pulse
           span 활동
