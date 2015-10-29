@@ -1,0 +1,43 @@
+template(name="home")
+  .page.current-page#page-list
+      .p-header
+        .p-header-button.hidden
+          i.ion-ios-arrow-back
+          | Back
+
+        .p-title Clean Jeju
+
+        .p-header-button#upload-img
+          //- | Forward
+          i.ion-ios-plus-empty
+          input(type="file" accept="image/*")
+      //- This is body container
+      .p-body
+        .p-body-inner
+          .tab-view.active(data-tab-name="trashList")
+            +trashList
+          .tab-view(data-tab-name="myPage")
+            +myPage
+
+
+      .p-tabbar
+        .p-tabbar-button(data-tab-target="trashList")
+          i.ion-ios-trash-outline
+          span 타임라인
+        .p-tabbar-button(data-tab-target="")
+          i.ion-ios-world-outline
+          span 맵
+        .p-tabbar-button(data-tab-target="")
+          //- i.ion-ios-filing-outline
+          i.ion-ios-pulse
+          span 활동
+        .p-tabbar-button(data-tab-target="myPage")
+          i.ion-ios-person-outline
+          span 내 정보
+        //- .p-tabbar-button(data-tab-target="myPage")
+          if currentUser
+            i.ion-ios-person-outline
+            span 내 정보
+          else
+            i.ion-ios-redo-outline
+            span 로그인
