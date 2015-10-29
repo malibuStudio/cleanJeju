@@ -1,3 +1,10 @@
+#page-accounts .p-header {
+  background: RGBA(244, 248, 249, 1);
+  .p-header-button {
+    color: RGBA(144, 144, 144, 1);
+  }
+}
+
 .accounts-wrapper {
   // background: @brand-primary;
 
@@ -5,15 +12,28 @@
   height: 100%;
 
   // Remove White Space?
-  // margin-top: -1px;
+  margin-top: -1px;
+  // background: -webkit-linear-gradient(-75deg, @brand-primary 0%, @brand-primary 20%, rgba(241,231,103,1) 100%);
+
+  background: RGBA(244, 248, 249, 1);
 
   padding: 1rem 8pt;
 }
 
 .accounts-wrapper h1 {
   margin: 0;
+  text-align: center;
+  color: @brand-primary;
+  margin-bottom: 2.5rem;
+}
 
-  color: white;
+.accounts-wrapper form {
+  padding: 0 2rem;
+}
+
+.accounts-wrapper form label {
+  color: RGBA(0, 0, 0, 0.5);
+  margin-left: 0.5rem;
 }
 
 .accounts-wrapper form input {
@@ -22,16 +42,22 @@
   width: 100%;
 
   padding: 1rem 0.5rem;
-  margin-top: 1rem;
 
-  background: RGBA(255, 255, 255, 0.2);
-  background: RGBA(0, 0, 0, 0.05);
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+
+  // background: RGBA(255, 255, 255, 0.2);
+  // background: RGBA(0, 0, 0, 0.025);
+  // background: transparent;
+
   box-shadow: none;
-  border: 0;
+  border: 1px solid RGBA(226, 232, 235, 1);
 
-  color: white;
+  // color: white;
+  // color: RGBA(0, 0, 0, 0.5);
 
-  font-size: 1.2rem;
+  // font-size: 1.2rem;
+
 
   &::placeholder {
     color: white;
@@ -45,4 +71,20 @@
   margin-top: 1.5rem;
 
   padding: 1rem !important;
+
+  border: 0;
+}
+
+.accounts-wrapper p {
+  color: RGBA(144, 144, 144, 1);
+  text-align: center;
+  a {
+    color: @brand-primary;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+#register {
+  display: none;
 }

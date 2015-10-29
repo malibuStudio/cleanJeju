@@ -5,8 +5,31 @@ template(name="accounts")
         i.ion-ios-arrow-back
         | Back
 
-      .p-title 로그인
+      //- .p-title 로그인
 
       .p-header-button.hidden
         | Forward
         i.ion-ios-arrow-forward
+
+    .p-body
+      .p-body-inner.accounts-wrapper
+        h1 Clean Jeju
+        #signin
+          form#form-signin
+            //- label(for="signin-user") 아이디/이메일
+            input(type="text" placeholder="아이디/이메일" name="signin-user")
+            //- label(for="signin-password") 비밀번호
+            input(type="password" placeholder="비밀번호" name="signin-password")
+
+            button.btn.btn-primary.btn-signin 로그인
+          p 아직 아이디가 없으신가요?
+            a(href="#") 회원가입
+        #register
+          form#form-register
+            input(type="text" placeholder="아이디" name="register-username")
+            input(type="text" placeholder="이메일" name="register-email")
+            input(type="password" placeholder="비밀번호" name="register-password")
+
+            button.btn.btn-primary.btn-register 회원가입
+          p 이미 회원인가요?
+            a(href="#") 로그인
