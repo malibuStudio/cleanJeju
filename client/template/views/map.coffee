@@ -6,12 +6,12 @@ $(window).resize( ->
 ).resize()
 
 Template.map.onCreated ->
-  navigator.geolocation.getCurrentPosition (loc)=>
-    @locationSubs and @locationSubs.stop()
-    @locationSubs = @subscribe 'getTrashLocations', [
-      loc.coords.longitude,
-      loc.coords.latitude
-    ]
+  # navigator.geolocation.getCurrentPosition (loc)=>
+  #   @locationSubs and @locationSubs.stop()
+  #   @locationSubs = @subscribe 'getTrashLocations', [
+  #     loc.coords.longitude,
+  #     loc.coords.latitude
+  #   ]
 
 @origin =
   longitude: 126.54

@@ -1,11 +1,19 @@
+Template.home.onCreated ->
+
+Template.home.helpers
+
 Template.home.events
   'touchend .p-tabbar-button': (e)->
     e.preventDefault()
 
     target = $(e.target).parent().attr('data-tab-target')
-    $('.tab-view').removeClass('active')
-    $("[data-tab-name=#{target}]").addClass('active')
 
+    if target is 'accounts'
+      console.log 'Open accounts'
+      pageFromBottom('#page-accounts')
+    else
+      $('.tab-view').removeClass('active')
+      $("[data-tab-name=#{target}]").addClass('active')
 
   'change #upload-img input': (e)->
     # Show dimmer
