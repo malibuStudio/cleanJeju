@@ -6,12 +6,15 @@ template(name="myPage")
           span.profile
         .right
           .inner
-            span.username 김상유
-            span.email sangyoo.km@gmail.com
+            span.username {{currentUser.username}}
+            span.email {{currentUser.emails.[0].address}}
             button.btn.btn-primary 프로필 수정
     .row
       .profile-desc
-        p 제주도를 사랑하는 개발자입니다. 제주도의 쓰레기들을 없앱시다.
+        if currentUser.profile.desc
+          p {{currentUser.profile.desc}}
+        else
+          p 소개
     .row
       .profile-info
         .p-block
