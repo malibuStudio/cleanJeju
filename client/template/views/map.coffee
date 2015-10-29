@@ -1,9 +1,9 @@
-$(window).resize( ->
-  h = $(window).height()
-  offsetTop = 0
-  $mc = $("#map")
-  $mc.css 'height', h- offsetTop
-).resize()
+# $(window).resize( ->
+#   h = $(window).height()
+#   offsetTop = 0
+#   $mc = $("#map")
+#   $mc.css 'height', h- offsetTop
+# ).resize()
 
 Template.map.onCreated ->
   # navigator.geolocation.getCurrentPosition (loc)=>
@@ -16,6 +16,8 @@ Template.map.onCreated ->
 @origin =
   longitude: 126.54
   latitude: 33.398633
+
+
 Template.map.onRendered ->
 #  navigator.geolocation.getCurrentPosition (location)=>
 #  console.log 'map rendered'
