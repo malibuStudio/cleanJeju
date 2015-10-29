@@ -32,5 +32,7 @@ Template.body.onRendered ->
   if platform.os.family is 'iOS' and (parseInt(platform.os.version, 10) >= 8)
     console.log platform.os.version
 
+  scrollHide()
+
 
 

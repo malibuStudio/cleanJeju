@@ -1,9 +1,9 @@
-# $(window).resize( ->
-#   h = $(window).height()
-#   offsetTop = 0
-#   $mc = $("#map")
-#   $mc.css 'height', h- offsetTop
-# ).resize()
+$(window).resize( ->
+  h = $(window).height()
+  offsetTop = 0
+  $mc = $("#map")
+  $mc.css 'height', h- offsetTop
+).resize()
 
 Template.map.onCreated ->
   # navigator.geolocation.getCurrentPosition (loc)=>
