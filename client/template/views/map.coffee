@@ -48,6 +48,7 @@ Template.map.onRendered ->
 #    dashArray: '3'
 #    fillOpacity: 0.7
 #  ).addTo(@map)
+@MapObject={}
 
 Template.map.helpers
   'trashes': (e, tmpl)->
@@ -57,6 +58,7 @@ Template.map.helpers
     trashes = Trashes.find().map (v)-> v.geometry.coordinates
     unless trashes.length
       return []
+    
     for feature in jejuMap.features
       density = 0
       for trash in trashes
@@ -75,7 +77,7 @@ Template.map.helpers
 
     console.log 'map rendered'
     console.log 'maxDensity', maxDensity
-    @map = L.map('map',
+    not MapObject.map and MapObject.map = L.map('map',
       minZoom: 9
       maxZoom: 9
       dragging: false
@@ -107,7 +109,8 @@ Template.map.helpers
       color: 'purple'
       dashArray: '3'
       fillOpacity: 0.7
-    L.geoJson(jejuMap, style: style).addTo(@map)
+    MapObject.layer and MapObject.layer.clearLayers()
+    MapObject.layer=L.geoJson(jejuMap, style: style).addTo(MapObject.map)
 
     jejuMap.features.sort (a,b)->
       a.properties.density > b.properties.density and -1 or
