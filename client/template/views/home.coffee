@@ -15,6 +15,11 @@ Template.home.events
       $('.tab-view').removeClass('active')
       $("[data-tab-name=#{target}]").addClass('active')
 
+  'touchend #upload-img': (e)->
+    unless Meteor.userId()
+      e.preventDefault()
+      pageFromBottom('#page-accounts')
+
   'change #upload-img input': (e)->
     # Show dimmer
     LOADER.show()
