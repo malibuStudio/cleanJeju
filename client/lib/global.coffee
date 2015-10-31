@@ -137,27 +137,20 @@
   before = $('.current-page')
   after = $(after)
 
-  after.addClass('current-page')
-
-  # Page Transition (Before Page)
-  TweenMax.to before, duration.before,
-    ## opacity: 0
-    y: '5%'
-    clearProps: 'all'
-    onStart: ->
-      before.removeClass('current-page')
-    onComplete: ->
-      console.log 'Page Transition End (Before)'
-
+  # after
+  after.css(
+    'transform': 'translateY(100%)'
+    'z-index': '9999999'
+  )
 
   # Page Transition (After Page)
   TweenMax.fromTo after, duration.after,
     y: '100%'
-    #opacity: 0
   ,
     y: '0%'
-    #opacity: 1
     ease: Power3.easeOut
     clearProps: 'all'
     onComplete: ->
+      before.removeClass('current-page')
       console.log 'Page Transition End (After)'
+      after.addClass('current-page')
