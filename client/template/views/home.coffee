@@ -15,6 +15,8 @@ Template.home.events
       $('.tab-view').removeClass('active')
       $("[data-tab-name=#{target}]").addClass('active')
 
+    $('.p-header').removeClass('p-header-up')
+
   'touchend #upload-img': (e)->
     unless Meteor.userId()
       e.preventDefault()
