@@ -18,7 +18,7 @@
       $('.current-page .p-header').removeClass('p-header-down').addClass 'p-header-up'
     else
       # Scroll Up
-      if st + $('.p-body-inner').height() < $('.page.current-page').height()
+      if st + $('.p-body-inner').height() > $('#viewport').height()
         $('.current-page .p-header').removeClass('p-header-up').addClass 'p-header-down'
     lastScrollTop = st
     return

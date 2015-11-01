@@ -60,9 +60,6 @@
 // .p-header is the header of each page (ios style)
 // ======================================================
 .p-header {
-  &.p-header-up {
-    display: none;
-  }
   position: fixed;
   top: 0;
   left: 0;
@@ -76,6 +73,9 @@
   background: @brand-primary;
 
   z-index: @p-tabbar-z;
+
+  .translate(0, 0);
+  transition: 150ms all;
 
   &.cj {
     color: @brand-primary;
@@ -123,6 +123,14 @@
     i.ion-ios-plus-empty {
       font-size: 2rem;
     }
+  }
+
+
+  // ====================================================
+  // Header Hide
+  // ====================================================
+  &.p-header-up {
+    .translate(0, -100%);
   }
 }
 
