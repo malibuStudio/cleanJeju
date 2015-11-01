@@ -2,15 +2,22 @@ Template.body.onCreated ->
   console.log 'CLEAN JEJU Initialized'
   #  @pageIndex = new ReactiveVar 1
   navigator.geolocation.getCurrentPosition (loc)=>
-    @locationSubs and @locationSubs.stop()
-    @locationSubs = @subscribe 'getTrashLocations', [
-      loc.coords.longitude,
-      loc.coords.latitude
-    ]
+    Session.set 'location',
+      coords:
+        latitude: loc.coords.latitude
+        longitude: loc.coords.longitude
   @touchstart =
     x: 0
     y: 0
   @comments = new Mongo.Collection null
+  @autorun =>
+    loc = Session.get 'location'
+    if loc?
+      @locationSubs and @locationSubs.stop()
+      @locationSubs = @subscribe 'getTrashLocations', [
+        loc.coords.longitude,
+        loc.coords.latitude
+      ]
 
 
 Template.body.events

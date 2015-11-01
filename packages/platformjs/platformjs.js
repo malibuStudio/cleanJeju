@@ -306,8 +306,9 @@
      */
     var opera = context.operamini || context.opera;
 
+    var operaClass;
     /** Opera `[[Class]]` */
-    var operaClass = reOpera.test(operaClass = (isCustomContext && opera) ? opera['[[Class]]'] : getClassOf(opera))
+    operaClass = reOpera.test(operaClass = (isCustomContext && opera) ? opera['[[Class]]'] : getClassOf(opera))
       ? operaClass
       : (opera = null);
 
