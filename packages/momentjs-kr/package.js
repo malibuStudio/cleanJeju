@@ -8,5 +8,5 @@ Package.describe({
 Package.onUse(function(api) {
   api.use('momentjs:moment@2.10.6');
   api.imply('momentjs:moment');
-  api.addFiles('momentjs-kr.js', 'client');
+  api.addFiles('momentjs-kr.js');
 });
