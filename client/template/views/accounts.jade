@@ -3,7 +3,7 @@ template(name="accounts")
     .p-header
       .p-header-button.back
         i.ion-ios-arrow-back
-        | Back
+        | 뒤로
 
       //- .p-title 로그인
 
@@ -20,7 +20,8 @@ template(name="accounts")
             input(type="text" placeholder="아이디/이메일" name="signin-user")
             //- label(for="signin-password") 비밀번호
             input(type="password" placeholder="비밀번호" name="signin-password")
-
+            span.forgot
+              a(href="#") 비밀번호 까먹었다 난 바보라서?
             button.btn.btn-primary.btn-signin 로그인
           p 아직 아이디가 없으신가요?
             a(href="#") 회원가입

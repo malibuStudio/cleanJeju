@@ -58,7 +58,9 @@
 
   // font-size: 1.2rem;
 
-
+  &[name=signin-password] {
+    margin-bottom: 0.5rem;
+  }
   &::placeholder {
     color: white;
     color: RGBA(0, 0, 0, 0.5);
@@ -78,6 +80,16 @@
 .accounts-wrapper p {
   color: RGBA(144, 144, 144, 1);
   text-align: center;
+  a {
+    color: @brand-primary;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.accounts-wrapper span.forgot {
+  float: right;
+  display: block;
   a {
     color: @brand-primary;
     text-decoration: none;
