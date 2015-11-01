@@ -7,7 +7,7 @@
   navbarHeight = $('.current-page .p-header').outerHeight()
 
   hasScrolled = ->
-    st = $('.current-page .p-body-inner').scrollTop()
+    st = $('.current-page .p-body').scrollTop()
     # Make sure they scroll more than delta
     if Math.abs(lastScrollTop - st) <= delta
       return
@@ -23,7 +23,7 @@
     lastScrollTop = st
     return
 
-  $('.p-body-inner').scroll (event) ->
+  $('.p-body').scroll (event) ->
     didScroll = true
     return
   setInterval (->
