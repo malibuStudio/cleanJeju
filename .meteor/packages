@@ -87,7 +87,7 @@ aldeed:collection2        # Collection2
 # =============================================================================
 
 blueimp:javascript-load-image     # EXIF, Canvas Convert etc
-# jonblum:jquery-cropper            # jquery Cropper
+teammalibu:cropper                # jquery Cropper
 iamkevingreen:imagesloaded        # Images Loaded (wait for image)
 lepozepo:cloudinary
 
@@ -113,3 +113,5 @@ chriswessels:hammer
 mdg:geolocation
 geojson-utils
 bevanhunt:leaflet
+
+
