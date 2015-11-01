@@ -88,6 +88,7 @@ standard-minifiers@1.0.2
 swiper:swiper@3.0.8
 teammalibu:cropper@0.0.1
 teammalibu:momentjs-kr@0.0.1
+teammalibu:platformjs@0.0.1
 templating@1.1.5
 templating-tools@1.0.0
 tracker@1.0.9
