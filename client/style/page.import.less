@@ -74,6 +74,11 @@
 
   z-index: @p-tabbar-z;
 
+  &.cj {
+    color: @brand-primary;
+    background: white;
+  }
+
   .p-title {
     position: absolute;
     top: 50%;
@@ -194,6 +199,25 @@
     span {
       display: block;
       font-size: @p-tabbar-text-size;
+    }
+  }
+  //==================
+  //  CUSTOM
+  //==================
+  &.cj {
+    color: white;
+    // background: @brand-primary;
+    background: black;
+    height: 44pt;
+    border: 0;
+    bottom: -1px;
+    .p-tabbar-button {
+      i, span {
+        color: white;
+      }
+      span {
+        display: none;
+      }
     }
   }
 }

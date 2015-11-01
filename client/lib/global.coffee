@@ -35,7 +35,11 @@
   before = $('.current-page')
   after = $(after)
 
-  after.addClass('current-page')
+  # after
+  after.css(
+    'transform': 'translateX(100%)'
+    'z-index': '9999999'
+  )
 
   # Page Transition (Before Page)
   TweenMax.to before, duration.before,
@@ -57,6 +61,7 @@
     ease: Power3.easeOut
     clearProps: 'all'
     onComplete: ->
+      after.addClass('current-page')
       console.log 'Page Transition End (After)'
 
 

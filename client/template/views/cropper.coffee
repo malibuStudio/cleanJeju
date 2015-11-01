@@ -10,5 +10,7 @@ Template.cropper.events
       console.log 'Cropper Destroyed'
     )
 
+  'touchend .btn-upload-cropped': (e)->
+    pageFromLeft('#page-desc')
 
 
