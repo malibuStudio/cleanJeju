@@ -13,26 +13,35 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('flemay:less-autoprefixer@1.2.0');
+  api.use('coffeescript');
+  api.use('jquery');
   api.addFiles([
-    'dist/malibu.import.less',
-    'dist/global/normalize.import.less',
-    'dist/global/fonts.import.less',
-    'dist/global/body.import.less',
-    'dist/global/reset.import.less',
-    'dist/global/variables.import.less',
-    'dist/global/mixins.import.less',
-    'dist/global/malibu.import.less',
+    'dist/coffee/feedback.coffee',
+    'dist/coffee/loader.coffee',
+    'dist/coffee/malibu.coffee',
+    'dist/coffee/modal.coffee',
+    'dist/coffee/tags.coffee',
+  ], 'client');
+  api.addFiles([
+    'dist/less/malibu.import.less',
+    'dist/less/global/normalize.import.less',
+    'dist/less/global/fonts.import.less',
+    'dist/less/global/body.import.less',
+    'dist/less/global/reset.import.less',
+    'dist/less/global/variables.import.less',
+    'dist/less/global/mixins.import.less',
+    'dist/less/global/malibu.import.less',
 
-    'dist/site/typography.import.less',
+    'dist/less/site/typography.import.less',
 
-    'dist/structure/structure.import.less',
+    'dist/less/structure/structure.import.less',
 
-    'dist/components/buttons/buttons.import.less',
-    'dist/components/buttons/buttons-mixin.import.less',
-    'dist/components/tags/tags.import.less',
-    'dist/components/modals/modals.import.less',
-    'dist/components/feedback/feedback.import.less',
-    'dist/components/loader/fullpage-loader.import.less'
+    'dist/less/components/buttons/buttons.import.less',
+    'dist/less/components/buttons/buttons-mixin.import.less',
+    'dist/less/components/tags/tags.import.less',
+    'dist/less/components/modals/modals.import.less',
+    'dist/less/components/feedback/feedback.import.less',
+    'dist/less/components/loader/fullpage-loader.import.less'
   ], 'client', {isImport: true});
 });
 
