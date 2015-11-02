@@ -32,8 +32,8 @@ check                     # Check
 mquandalle:jade           # Meteor JADE
 coffeescript              # Coffeescript
 underscore                # Underscore
-# flemay:less-autoprefixer  # LESS with autoprefixer
-less
+flemay:less-autoprefixer  # LESS with autoprefixer
+# less
 infinitedg:gsap           # Greensock GSAP Animation
 reactive-var              # Reactive Variables
 
@@ -118,4 +118,4 @@ bevanhunt:leaflet
 
 teammalibu:momentjs-kr
 teammalibu:platformjs
-teammalibu:malibu-style
+# teammalibu:malibu-style
