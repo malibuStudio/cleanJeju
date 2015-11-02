@@ -12,8 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.use('less');
-  // api.use('flemay:less-autoprefixer@1.2.0');
+  api.use('flemay:less-autoprefixer@1.2.0');
   api.addFiles([
     'dist/malibu.less',
     'dist/global/normalize.import.less',
