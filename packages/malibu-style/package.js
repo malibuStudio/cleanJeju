@@ -14,7 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('flemay:less-autoprefixer@1.2.0');
   api.addFiles([
-    'dist/malibu.less',
+    'dist/malibu.import.less',
     'dist/global/normalize.import.less',
     'dist/global/fonts.import.less',
     'dist/global/body.import.less',
@@ -33,7 +33,7 @@ Package.onUse(function(api) {
     'dist/components/modals/modals.import.less',
     'dist/components/feedback/feedback.import.less',
     'dist/components/loader/fullpage-loader.import.less'
-  ], 'client');
+  ], 'client', {isImport: true});
 });
 
 // Package.onTest(function(api) {
