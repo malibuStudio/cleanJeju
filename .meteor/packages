@@ -32,7 +32,8 @@ check                     # Check
 mquandalle:jade           # Meteor JADE
 coffeescript              # Coffeescript
 underscore                # Underscore
-#flemay:less-autoprefixer  # LESS with autoprefixer
+# flemay:less-autoprefixer  # LESS with autoprefixer
+less
 infinitedg:gsap           # Greensock GSAP Animation
 reactive-var              # Reactive Variables
 
