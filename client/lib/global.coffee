@@ -12,8 +12,6 @@
   before = $('.current-page')
   after = $(after)
 
-
-
   # Page Transition (Before Page)
   TweenMax.to before, duration.before,
     ## opacity: 0
