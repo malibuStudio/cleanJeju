@@ -9,11 +9,14 @@ template(name="comments")
 
     .p-body
       .p-body-inner
-        each comments
+        with comments
           .comments-wrapper
             | {{createdUserName}}
             span {{moFromNow createdAt withoutSuffix}}
             | {{description}}
     .comments-input
       textarea
-
+      button.btn.btn-add-description
+        i.icon.add
+      button.btn.btn-add-image
+        i.icon.photo

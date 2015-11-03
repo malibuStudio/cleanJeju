@@ -24,12 +24,15 @@ Template.body.events
 
 
 
-
 Template.body.onRendered ->
   if platform.os.family is 'iOS' and (parseInt(platform.os.version, 10) >= 8)
     console.log platform.os.version
 
   scrollHide()
 
-
-
+  $(document).on 'keydown', (e)->
+    key = e.keyCode or e.which
+    # Disable Tab Index (9)
+    if key in [9]
+      e.preventDefault()
+      return false

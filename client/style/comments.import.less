@@ -1,8 +1,40 @@
 .comments-input {
   position: fixed;
-
-  left: 0;
   bottom: 0;
-
+  left: 0;
   z-index: 999;
+
+  display: flex;
+
+  width: 100%;
+  padding: 8pt;
+
+  background: RGBA(244, 248, 249, 1);
+}
+
+.comments-input textarea {
+  flex: 1;
+
+  border: 0;
+  border: 1px solid darken(RGBA(244, 248, 249, 1), 20%);
+  box-shadow: none;
+
+  resize: none;
+}
+
+.comments-input button.btn-add-description {
+  flex: 0 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  i {
+    margin: 0;
+  }
+}
+
+
+#page-comments .comments-wrapper {
+
 }

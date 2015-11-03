@@ -22,6 +22,8 @@ Template.trashList.events
   'touchend [data-action=goto-comments]': (e)->
     e.preventDefault()
 
+    Session.set('commentParentId', @_id)
+
     pageFromLeft('#page-comments')
 
     # Needed for stopping anchor tags behavior
