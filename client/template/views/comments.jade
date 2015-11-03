@@ -1,1 +1,19 @@
 template(name="comments")
+  .page#page-comments
+    .p-header.cj
+      .p-header-button.back
+        i.ion-ios-arrow-back
+        | 뒤로
+      .p-title
+        | 쓰레기 연대기
+
+    .p-body
+      .p-body-inner
+        each comments
+          .comments-wrapper
+            | {{createdUserName}}
+            span {{moFromNow createdAt withoutSuffix}}
+            | {{description}}
+    .comments-input
+      textarea
+

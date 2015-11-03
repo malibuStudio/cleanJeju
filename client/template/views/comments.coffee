@@ -1,11 +1,4 @@
-Template.trashList.helpers
-  Trashes: ->
-    # t = Template.instance()
-    # idx = t.pageIndex.get()
-    # debugger
-    Trashes.find {},
-      sort:
-        createdAt: -1
+Template.comments.helpers
   comments: ->
     t = Template.instance()
     trashId = Session.get('commentParentId')
@@ -18,11 +11,8 @@ Template.trashList.helpers
         sort:
           createdAt: -1
 
-Template.trashList.events
-  'touchend [data-action=goto-comments]': (e)->
+Template.comments.events
+  'touchend .back': (e)->
     e.preventDefault()
 
-    pageFromLeft('#page-comments')
-
-    # Needed for stopping anchor tags behavior
-    return false
+    pageFromRight('#page-list')

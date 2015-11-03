@@ -71,7 +71,11 @@
   before = $('.current-page')
   after = $(after)
 
-  after.addClass('current-page')
+  # after
+  after.css(
+    'transform': 'translateX(100%)'
+    'z-index': '9999999'
+  )
 
   # Page Transition (Before Page)
   TweenMax.to before, duration.before,
@@ -95,6 +99,7 @@
     clearProps: 'all'
     onComplete: ->
       console.log 'Page Transition End (After)'
+      after.addClass('current-page')
 
 
 @pageFromTop = (after)->

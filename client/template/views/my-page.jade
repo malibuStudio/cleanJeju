@@ -8,13 +8,14 @@ template(name="myPage")
           .inner
             span.username {{currentUser.username}}
             span.email {{currentUser.emails.[0].address}}
-            button.btn.btn-primary 프로필 수정
+            button.btn.btn-primary.btn-edit-profile 프로필 수정
     .row
       .profile-desc
         if currentUser.profile.desc
           p {{currentUser.profile.desc}}
         else
           p 소개
+        textarea.edit-profile(style="display:none;")
     .row
       .profile-info
         .p-block

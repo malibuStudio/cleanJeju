@@ -17,7 +17,7 @@ Template.map.helpers
     trashes = Trashes.find().map (v)-> v.geometry.coordinates
     unless trashes.length
       return []
-    
+
     for feature in jejuMap.features
       density = 0
       for trash in trashes
@@ -69,3 +69,6 @@ Template.map.helpers
       a.properties.density > b.properties.density and -1 or
       a.properties.density is b.properties.density and 0 or
       a.properties.density < b.properties.density and 1
+
+
+Template.map.onRendered ->
