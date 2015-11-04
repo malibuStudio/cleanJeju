@@ -17,17 +17,18 @@ Template.map.helpers
     trashes = Trashes.find().map (v)-> v.geometry.coordinates
     unless trashes.length
       return []
-
+    
     for feature in jejuMap.features
       density = 0
       for trash in trashes
-        if GeoJSON.pointInPolygon({
-            'type': 'Point'
-            'coordinates': trash
-          },
+        GeoJSON.pointInPolygon(
+          'type': 'Point'
+          'coordinates': trash
+        ,
           'type': 'Polygon'
-          'coordinates': feature.geometry.coordinates )
-          density++
+          'coordinates': feature.geometry.coordinates
+        ) and density++
+
       feature.properties.density = density
       maxDensity = maxDensity < density and density or maxDensity
 
@@ -55,7 +56,7 @@ Template.map.helpers
       d > 1 and '#FED976' or
       '#FFEDA0'
 
-    style = (feature)->
+    getStyle = (feature)->
       fillColor: getColor feature.properties.density
       weight: 2
       opacity: 0.7
@@ -63,7 +64,9 @@ Template.map.helpers
       dashArray: '3'
       fillOpacity: 0.7
     MapObject.layer and MapObject.layer.clearLayers()
-    MapObject.layer=L.geoJson(jejuMap, style: style).addTo(MapObject.map)
+#    Meteor.setTimeout ->
+    MapObject.layer=L.geoJson(jejuMap, style: getStyle).addTo(MapObject.map)
+#   , 2000
 
     jejuMap.features.sort (a,b)->
       a.properties.density > b.properties.density and -1 or
