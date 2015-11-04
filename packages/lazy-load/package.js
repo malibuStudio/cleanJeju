@@ -13,12 +13,5 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('jquery');
-  api.addFiles('jquery.lazyload.js');
+  api.addFiles('jquery.lazyload.js', 'client');
 });
-
-// Package.onTest(function(api) {
-//   api.use('ecmascript');
-//   api.use('tinytest');
-//   api.use('teammalibu:lazy-load');
-//   api.addFiles('lazy-load-tests.js');
-// });
