@@ -28,3 +28,7 @@ Template.trashList.events
 
     # Needed for stopping anchor tags behavior
     return false
+
+Template.trashList.onRendered ->
+  $('img.trash-img').lazyload
+    effect : 'fadeIn'

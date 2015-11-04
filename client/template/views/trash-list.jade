@@ -10,7 +10,7 @@ template(name="trashList")
             span.createdAt {{moFromNow createdAt withoutSuffix}}
         .trash-body
           .img-wrapper
-            img(src="{{imageUrl}}")
+            img.trash-img(src="{{imageUrl}}")
           .action-bar
             a(href="#" data-action="goto-comments")
               //- i.ion-chatboxes
