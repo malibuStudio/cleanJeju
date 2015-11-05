@@ -9,14 +9,29 @@ template(name="comments")
 
     .p-body
       .p-body-inner
-        with comments
+        each comments
           .comments-wrapper
-            | {{createdUserName}}
-            span {{moFromNow createdAt withoutSuffix}}
-            | {{description}}
+            .left
+              .profile
+            .right
+              .meta
+                .r-left
+                  span.username
+                    | {{createdUserName}}
+                  span.created {{moFromNow createdAt withoutSuffix}}
+                .r-right
+                  i.ion-ios-heart-outline
+              if imageUrl
+                .comments-img
+                  img(src="{{imageUrl}}")
+              .comment-desc
+                | {{description}}
+
     .comments-input
       textarea
       button.btn.btn-add-description
         i.icon.add
-      button.btn.btn-add-image
-        i.icon.photo
+      #upload-comment-img
+        button.btn.btn-add-image
+          i.icon.photo
+        input(type="file" accept="image/*")
