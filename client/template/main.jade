@@ -2,11 +2,71 @@ head
   title Clean Jeju
   meta(charset="UTF-8")
   meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui")
-  script(type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=c7207b9e0dd7b1279946753c84e7e68a")
+  script(type="textvascript" src="is.daum.netpsps3.js?apikey=c7207b9e0dd7b1279946753c84e7e68a")
 
 body
   #viewport
-    +home
-    +cropper
-    +accounts
-    +comments
+    .sidebar
+      .sidebar-top
+        a(href="#")
+          span moments
+    .navbar
+      a(href="#" data-action="sidebar" data-feedback="true")
+        .inner
+          i.ion-navicon
+      span.current-page-name
+        | Meteor Meetup
+
+    //- #content.gray
+    #content
+      .sidemenu
+        a.active(href="#" data-feedback="true")
+          i.ion-ios-paper
+          .tooltip
+            span Write
+        a(href="#" data-feedback="true")
+          i.ion-ios-calendar-outline
+          .tooltip
+            span Calendar
+        a(href="#" data-feedback="true")
+          i.ion-ios-briefcase
+          .tooltip
+            span Documents
+      .content-body
+        .photo-list
+
+          .photo-item
+            .meta
+              .left
+                h4 #112
+              .right
+                a(href="#")
+                  i.ion-ios-printer-outline
+            .photo-wrapper
+              img(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+
+          .photo-item
+            h4 #112
+            .photo-wrapper
+              img(src="https://s-media-cache-ak0.pinimg.com/originals/cc/c9/a9/ccc9a9caa593ca378e23ae6f2ced145c.jpg")
+
+          .photo-item
+            h4 #112
+            .photo-wrapper
+              img(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+
+          .photo-item
+            h4 #112
+            .photo-wrapper
+              img(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+
+          .photo-item
+            h4 #112
+            .photo-wrapper
+              img(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+
+          .photo-item
+            h4 #112
+            .photo-wrapper
+              img(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+

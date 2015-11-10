@@ -1,38 +1,38 @@
-Template.body.onCreated ->
-  console.log 'CLEAN JEJU Initialized'
-  #  @pageIndex = new ReactiveVar 1
-  navigator.geolocation.getCurrentPosition (loc)=>
-    Session.set 'location',
-      coords:
-        latitude: loc.coords.latitude
-        longitude: loc.coords.longitude
-  @touchstart =
-    x: 0
-    y: 0
-  @comments = new Mongo.Collection null
-  @autorun =>
-    loc = Session.get 'location'
-    if loc?
-      @locationSubs and @locationSubs.stop()
-      @locationSubs = @subscribe 'getTrashLocations', [
-        loc.coords.longitude,
-        loc.coords.latitude
-      ]
-
-
 Template.body.events
+  'click [data-action=sidebar]': (e)->
+    e.preventDefault()
 
+    openSidebar = ()->
+      sidebar = document.querySelector('.sidebar')
 
+      TweenMax.to sidebar, 0.25,
+        x: 0
+        ease: Power4.easeIn
+        onStart: ->
+          overlay = '<div class="sidebar-overlay"></div>'
+          sidebar.insertAdjacentHTML('afterend', overlay)
 
-Template.body.onRendered ->
-  if platform.os.family is 'iOS' and (parseInt(platform.os.version, 10) >= 8)
-    console.log platform.os.version
+          added = document.querySelector('.sidebar-overlay')
+          added.style.position = 'fixed'
+          added.style.top = '0'
+          added.style.left = '0'
+          added.style.width = '100vw'
+          added.style.height = '100vh'
+          added.style.zIndex = '40'
+          added.style.opacity = '0'
+          added.style.background = 'transparent'
 
-  scrollHide()
+    openSidebar()
 
-  $(document).on 'keydown', (e)->
-    key = e.keyCode or e.which
-    # Disable Tab Index (9)
-    if key in [9]
-      e.preventDefault()
-      return false
+    return false
+  'click .sidebar-overlay, click .sidebar-top a': (e)->
+    sidebar = document.querySelector('.sidebar')
+
+    TweenMax.to sidebar, 0.2,
+      x: '-100%'
+      clearProps: 'all'
+      onStart: ->
+        added = document.querySelector('.sidebar-overlay')
+        added.parentNode.removeChild(added)
+
+    return false
