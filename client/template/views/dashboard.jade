@@ -1,0 +1,26 @@
+template(name="dashboard")
+  #dashboard
+
+
+    //- table
+      tr
+        td 썸띵
+        td 썸띵 썸띵
+        td 저시기 머시기
+      tr
+        td 슴가 하앍
+        td 썸띵 썸
+        td 응썸딩
+    //- .dialog-container
+      .dialog-item
+        .img-wrapper
+          img(src="/img/moments_logo_512.png")
+        h3 모멘츠 사용을 시작하세요!
+        p 머시기 저시기 가격을 알아보시려면 저시기 머시지
+        //- .pull-right
+          button.btn.btn-sm.btn-primary
+            | 가격 알아보기
+
+      .dialog-item
+        .img-wrapper
+          +svgCal

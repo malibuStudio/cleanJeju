@@ -1,0 +1,52 @@
+.settings-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: #FAFAFA;
+
+  pointer-events: auto;
+
+  z-index: 10000;
+
+  .translate(0, 100%);
+}
+
+.settings-container .navbar {
+  // display: flex;
+
+  // align-items: center;
+
+  // width: 100vw;
+  // height: @nav-height;
+
+  // padding: 0 2rem;
+
+  // border-bottom: 1px solid @ios-border;
+  background: @brand-primary;
+  button.close {
+    display: block;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    padding: 10px;
+    background: none;
+    color: white;
+    border: 0;
+
+    svg.close {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      .st0 {
+        fill: white;
+      }
+    }
+  }
+  span {
+    font-size: 1.25rem;
+    color: white;
+  }
+}

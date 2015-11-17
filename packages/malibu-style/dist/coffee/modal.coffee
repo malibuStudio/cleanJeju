@@ -72,12 +72,24 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
         overlay.style.pointerEvents = 'auto'
 
   # Set modal to 'block'
-  modal.style.display = 'block'
 
   # Open Modal
-  TweenMax.to modal, openD,
+  TweenMax.fromTo modal, openD,
+    display: 'block',
+    scale: 0.5
+    opacity: 0
+    x: '-50%'
+    y: '-50%'
+  ,
     scale: 1
+    x: '-50%'
+    y: '-50%'
     opacity: 1
+    # clearProps: 'all'
+    # onComplete: ->
+    #   $(modal).css
+    #     'transform': 'translate3d(-50%, -50%, 0) scale(1)';
+
 
 
   closeModal = ()->

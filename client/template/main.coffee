@@ -1,4 +1,41 @@
-Template.body.events
+launchIntoFullscreen = (element)->
+  if element.requestFullscreen
+    element.requestFullscreen()
+  else if element.mozRequestFullScreen
+    element.mozRequestFullScreen()
+  else if element.webkitRequestFullscreen
+    element.webkitRequestFullscreen()
+  else if element.msRequestFullscreen
+    element.msRequestFullscreen()
+
+Template.layout.events
+  'click [data-action=settings]': (e)->
+    e.preventDefault()
+
+    settings = $('.settings-container')
+
+    TweenMax.to settings, 0.267,
+      y: '0%'
+      ease: Power3.easeOut
+
+  'click button.close': (e)->
+    e.preventDefault()
+
+    settings = $('.settings-container')
+
+    TweenMax.to settings, 0.267,
+      y: '100%'
+      ease: Power3.easeOut
+
+  'click .photo-item': (e)->
+    MODAL('photo-item-modal')
+
+  'click .create-event': (e)->
+    MODAL('create-event-modal')
+
+  'click a.event-item:not(.create-event)': (e)->
+
+
   'click [data-action=sidebar]': (e)->
     e.preventDefault()
 
@@ -36,3 +73,5 @@ Template.body.events
         added.parentNode.removeChild(added)
 
     return false
+
+Template.body.onRendered ->

@@ -1,0 +1,59 @@
+template(name="photoList")
+  .modal#photo-item-modal
+    .modal-header
+      img(src="/img/moments_logo_512.png")
+      span 무엇을 도와드릴까요?
+        //- span 국민대 EccoNight
+        span #112
+    .modal-body
+      .img
+        img.m(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+      .actions
+        .row
+          a(href="")
+            +svgSelphy
+            span 프린트
+          a(href="")
+            +svgTrash
+            span 삭제
+        .row
+          a(href="")
+            +svgDownload
+            span 저장
+
+
+        //- a(href="")
+        //-   img.svg(src="icons/selphy.svg")
+        //-   span 프린트
+    //- .modal-footer
+
+  .photo-list
+    .photo-item
+      .meta
+          h4 #112
+      .photo-wrapper
+        .printed
+          +svgImg1
+          span 프린트 횟수 (1)
+        img.i(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
+        .loading-placeholder
+            //- i.loading.icon.circle.notched
+
+
+    .photo-item
+      .meta
+        h4 #112
+      .photo-wrapper
+        img.i(src="https://s-media-cache-ak0.pinimg.com/originals/cc/c9/a9/ccc9a9caa593ca378e23ae6f2ced145c.jpg")
+        .loading-placeholder
+          //- i.loading.icon.circle.notched
+    img.no-photo(src="")
+
+  .settings-container
+      .navbar.settings-navbar
+        .left
+          button.close(href="#")
+            i.ion-close
+          span Settings
+
+

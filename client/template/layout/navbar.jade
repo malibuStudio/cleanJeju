@@ -1,0 +1,11 @@
+template(name="navbar")
+  .navbar
+    .left
+      a(href="#" data-action="sidebar" data-feedback="true")
+        .inner
+          i.ion-navicon
+      span.current-page-name
+        span {{pageTitle}}
+    .right
+      a.settings(href="#" data-feedback="true" data-action="settings" class="{{isActiveRoute 'photoList'}}")
+        +svgSettings2

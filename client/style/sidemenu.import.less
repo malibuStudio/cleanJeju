@@ -1,0 +1,96 @@
+.sidemenu {
+  flex: 0 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  padding-top: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 1.5rem;
+  margin-right: 2rem;
+
+  font-size: 1.4rem;
+  color: @nav-icon-color;
+
+  a {
+    position: relative;
+
+    display: block;
+
+    color: @nav-icon-color;
+    margin: 0.75rem 0;
+
+    text-align: center;
+
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+
+
+    }
+
+    &.active {
+      color: @brand-primary;
+      .st0 {
+        width: 32px;
+        height: 32px;
+        fill: @brand-primary;
+      }
+    }
+    .tooltip {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      .translate(0, -50%);
+      opacity: 0;
+      padding: 0.2rem;
+      font-size: 0.7rem;
+      background: @nav-icon-color;
+      color: white;
+      border-radius: 3px;
+      transition: all 200ms ease;
+      span {
+        white-space: nowrap;
+      }
+
+    }
+    &:hover {
+      .tooltip {
+        top: 50%;
+        left: 112%;
+        .translate(0, -50%);
+        opacity: 0.9;
+        z-index: 9999;
+      }
+    }
+  }
+}
+
+.sidemenu a.photo-list {
+  opacity: 0;
+  .translate(0, -100%);
+  transition: 200ms all;
+  &.active {
+    opacity: 1;
+    .translate(0, 0);
+  }
+}
+
+.sidemenu a.signout {
+  .translate(0, -100%);
+  margin-top: -0.75rem;
+  transition: all 200ms ease;
+  z-index: 2;
+}
+.sidemenu  {
+  a.photo-list.active + a.signout {
+    .translate(0, 0);
+    margin-top: 0.75rem;;
+  }
+}

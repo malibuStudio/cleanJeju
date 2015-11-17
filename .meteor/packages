@@ -114,6 +114,11 @@ mdg:geolocation
 geojson-utils
 bevanhunt:leaflet
 
+# =============================================================================
+# Iron Router
+# =============================================================================
+iron:router
+zimme:active-route
 
 teammalibu:momentjs-kr
 teammalibu:platformjs

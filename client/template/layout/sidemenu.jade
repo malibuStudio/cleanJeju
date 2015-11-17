@@ -1,0 +1,20 @@
+template(name="sidemenu")
+  .sidemenu
+    a(href="{{pathFor 'dashboard'}}" data-feedback="true" class="{{isActiveRoute 'dashboard'}}")
+      +svgDashboard
+      .tooltip
+        span 대쉬보드
+    a(href="{{pathFor 'eventsList'}}" data-feedback="true" class="{{isActiveRoute 'eventsList'}}")
+      //- img.svg.sidemenu-icon(src="icons/cal.svg")
+      +svgCal
+      .tooltip
+        span 이벤트
+    a.photo-list(href="#" data-feedback="true" class="{{isActiveRoute 'photoList'}}")
+      +svgImg1
+      //- .tooltip
+      //-   span 사진
+    a.signout(href="" data-feedback="true")
+      +svgSignOut
+      .tooltip
+        span 로그아웃
+

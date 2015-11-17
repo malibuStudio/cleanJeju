@@ -1,0 +1,35 @@
+template(name="signin")
+  .accounts-wrapper
+    h1
+      img(src="/img/moments_logo_512.png")
+      span 로그인
+    form.account-form#signin-form
+      .inner
+        p.msg 아직 회원이 아닌가요?
+          a(href="{{pathFor 'register'}}") 회원가입
+        .input-wrapper
+          label(for="signin-user")
+            +svgUser
+          input#signin-user(type="text" placeholder="아이디/이메일" name="signin-user")
+        .input-wrapper
+          label(for="signin-password")
+            +svgKey
+          input#signin-password(type="password" placeholder="비밀번호" name="signin-password")
+          //- button
+          //-   i.ion-arrow-right-a
+        button.btn.btn-sm.btn-primary.btn-signin
+          | 로그인
+        a.forgot(href="")
+          | 비밀번호 찾기
+
+
+    //- form.account-form#register-form
+    //-   .input-wrapper
+    //-     label(for="register-username")
+    //-     input#register-username(placeholder="" name="register-username")
+    //-   .input-wrapper
+    //-     label(for="register-email")
+    //-     input#register-email(placeholder="" name="register-email")
+    //-   .input-wrapper
+    //-     label(for="register-password")
+    //-     input#register-password(placeholder="" name="register-password")
