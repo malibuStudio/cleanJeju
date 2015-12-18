@@ -1,28 +1,28 @@
 template(name="photoListModal")
-  .modal#photo-item-modal
-    .modal-header
-      with singlePhoto
-        img(src="/img/moments_logo_512.png")
-        span 무엇을 도와드릴까요?
-          span {{ticket}}
-    .modal-body
-      with singlePhoto
-        .img
-          img.m(src="{{url}}")
-        .actions
-          .row
-            a(href="" data-action="print")
-              +svgSelphy
-              span 프린트
-            a(href="" data-action="remove")
-              +svgTrash
-              span 삭제
-          .row
-            a(href="")
-              +svgDownload
-              span 저장
-        .delete-message
-          h4 해당 이미지를 삭제하시겠습니까?
-          .row
-            button(data-action="delete-confirm") 예
-            button(data-action="delete-cancel") 아니요
+  //- .modal#photo-item-modal
+  //-   .modal-header
+  //-     with singlePhoto
+  //-       img(src="/img/moments_logo_512.png")
+  //-       span 무엇을 도와드릴까요?
+  //-         span {{ticket}}
+  //-   .modal-body
+  //-     with singlePhoto
+  //-       .img
+  //-         img.m(src="{{url}}")
+  //-       .actions
+  //-         .row
+  //-           a(href="" data-action="print")
+  //-             +svgSelphy
+  //-             span 프린트
+  //-           a(href="" data-action="remove")
+  //-             +svgTrash
+  //-             span 삭제
+  //-         .row
+  //-           a(href="")
+  //-             +svgDownload
+  //-             span 저장
+  //-       .delete-message
+  //-         h4 해당 이미지를 삭제하시겠습니까?
+  //-         .row
+  //-           button(data-action="delete-confirm") 예
+  //-           button(data-action="delete-cancel") 아니요

@@ -2,7 +2,9 @@ template(name="photoList")
   .photo-list-container
     .search-wrapper
       label(for="search") 검색
-      input#search(type="number")
+      //- input#search(type="number")
+      +EasySearch.Input(index=photosIndex attributes=attr allDocsOnEmpty=true)
+
     .photo-list
       //- .photo-item
       //-   .meta
@@ -14,33 +16,34 @@ template(name="photoList")
       //-     img.i(src="http://cdnstatic.visualizeus.com/thumbs/20/dc/girl,eyes,face,foto,portrait-20dc9d286e1d149c4519b7cb37fc0c78_h.jpg")
       //-     .loading-placeholder
       //-         //- i.loading.icon.circle.notched
-      if searchingDone
-        each photoItem
-          .photo-item
-            .meta
-              h4
-                span.sharp #
-                span {{ticket}}
-              if luckyDraw
-                .lucky-draw
-                  +svgDiamond
-                //- .circle
-            .photo-wrapper
-              if printed
-                .printed
-                  +svgSelphy
-                  span 프린트 횟수 ({{printCount}})
-              img.i(src="{{url}}")
-              .loading-placeholder
-                i.loading.icon.circle.notched
-        if hasMore
-          .photo-item.load-more
-            button(class="{{loadingClass}}")
-              span 더 보기
-        if noSearchResult
-          .search-no-result
-            h3 검색한 사진은 존재하지 않거나 삭제됐습니다
-      else
+      //- if searchingDone
+      +EasySearch.Each(index=photosIndex)
+        .photo-item
+          .meta
+            h4
+              span.sharp #
+              span {{ticket}}
+            if luckyDraw
+              .lucky-draw
+                +svgDiamond
+              //- .circle
+          .photo-wrapper
+            if printed
+              .printed
+                +svgSelphy
+                span 프린트 횟수 ({{printCount}})
+            img.i(src="{{url}}")
+            .loading-placeholder
+              i.loading.icon.circle.notched
+        //- if hasMore
+        //- .photo-item.load-more
+        //-   button(class="{{loadingClass}}")
+        //-     span 더 보기
+        //- if noSearchResult
+      +EasySearch.IfNoResults(index=photosIndex)
+        .search-no-result
+          h3 검색한 사진은 존재하지 않거나 삭제됐습니다
+      //- else
         .search-loading
           .inner
             .snake-container
