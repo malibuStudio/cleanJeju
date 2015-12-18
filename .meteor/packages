@@ -35,6 +35,7 @@ underscore                # Underscore
 flemay:less-autoprefixer  # LESS with autoprefixer
 infinitedg:gsap           # Greensock GSAP Animation
 reactive-var              # Reactive Variables
+risul:chance              # Random Generator
 
 
 # =============================================================================
@@ -73,7 +74,7 @@ lbee:moment-helpers       # Moment.js Helpers
 # =============================================================================
 
 aldeed:collection2        # Collection2
-
+tmeasday:publish-counts   # Publish Counts
 
 # =============================================================================
 # Dev Tool Packages (Instable after 1.2)
@@ -124,3 +125,12 @@ teammalibu:momentjs-kr
 teammalibu:platformjs
 teammalibu:malibu-style
 teammalibu:lazy-load
+
+
+softwarerero:accounts-t9n
+
+
+# faisalman:ua-parser-js
+mfpierre:chartist-js
+
+meteorhacks:kadira

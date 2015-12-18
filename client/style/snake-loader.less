@@ -1,0 +1,62 @@
+.snake-container {
+  position: relative;
+  margin: 0 auto;
+  width: 54px;
+  height: 54px;
+  zoom: 1.7;
+}
+
+.rotator {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  position: relative;
+  height: 54px;
+  width: 54px;
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.path {
+  stroke-dasharray: 1, 144.51314;
+  stroke-dashoffset: 0;
+  fill: none;
+  animation: stroke 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  -moz-animation: stroke 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  -webkit-animation: stroke 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  -o-animation: stroke 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dasharray: 1, 144.51314;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 96.24575, 144.51314;
+    stroke-dashoffset: 48.12288;
+  }
+  100% {
+    stroke-dasharray: 96.33246, 144.51314;
+    stroke-dashoffset: -143.51314;
+  }
+}
+@keyframes color {
+  100%, 0%, 24% {
+    stroke: lighten(desaturate(#00A79D, 25%), 15%);
+  }
+  25%, 49% {
+    stroke: lighten(desaturate(#00A79D, 15%), 10%);
+  }
+  50%, 74% {
+    stroke: lighten(desaturate(#00A79D, 10%), 5%);
+  }
+  75%, 99% {
+    stroke: #00A79D;
+  }
+}
+

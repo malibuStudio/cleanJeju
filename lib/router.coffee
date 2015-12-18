@@ -4,12 +4,15 @@ Router.configure
 Router.route '/',
   name: 'dashboard'
 
-Router.route '/events',
-  name: 'eventsList'
+# Router.route '/events',
+  # name: 'eventsList'
+  # yieldRegions:
+    # 'eventsListModal': to: 'modal'
 
-Router.route '/events/photos',
+Router.route '/photo-list',
   name: 'photoList'
-
+  yieldRegions:
+    'photoListModal': to: 'modal'
 
 
 
@@ -33,5 +36,16 @@ onBeforeActions =
       console.log 'Sign-in Required'
     else
       @next()
+
+  # fadeIn: ()->
+  #   TweenMax.fromTo '.content-body', 0.35,
+  #     opacity: 0
+  #   ,
+  #     opacity: 1
+  #   @next()
+
+
 Router.onBeforeAction onBeforeActions.loginRequired,
   except: ['register', 'signin']
+# Router.onBeforeAction onBeforeActions.fadeIn
+

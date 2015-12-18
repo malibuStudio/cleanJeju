@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-content: flex-start;
-  background: @ios-gray;
+
   padding-top: 1rem;
   padding-left: 1rem;
 }
@@ -51,7 +51,8 @@
   // font-weight: bold;
 }
 .event-item .event-date,
-.event-item .event-total {
+.event-item .event-count-image,
+.event-item .event-count-print {
   display: block;
   color: @ios-gray-text;
   // margin-bottom: 0.55rem;
@@ -75,7 +76,8 @@
   }
 }
 
-.event-item .event-total {
+.event-item .event-count-image,
+.event-item .event-count-print {
   border-bottom: 0;
   span {
     transition: @event-item-transition;
@@ -92,7 +94,8 @@
       color: white;
     }
     .event-date,
-    .event-total {
+    .event-count-image,
+    .event-count-print {
       .st0 {
         fill: @nav-icon-color;//@nav-icon-color;
       }

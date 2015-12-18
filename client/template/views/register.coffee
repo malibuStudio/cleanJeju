@@ -13,12 +13,12 @@ Template.register.events
 
     Meteor.call 'register', obj, (err, res)->
       if err
-        console.log err.reason
+        throwError err.reason
         btn.classList.remove 'loading'
       else
         Meteor.loginWithPassword res.username, res.password, (err, result) ->
           if err
-            console.log err.reason
+            throwError T9n.get('error.accounts.' + err.reason)
             btn.classList.remove 'loading'
           else
             btn.classList.remove 'loading'

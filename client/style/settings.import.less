@@ -1,7 +1,9 @@
 .settings-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+
+  display: none;
 
   width: 100vw;
   height: 100vh;
@@ -11,21 +13,20 @@
   pointer-events: auto;
 
   z-index: 10000;
+  will-change: transform, opacity;
 
   .translate(0, 100%);
+
+  transition: transform .325s cubic-bezier(0.24,1,0.32,1), opacity .154s cubic-bezier(0.24,1,0.32,1);
+
+  opacity: 0;
+  &.show {
+    .translate(0, 0);
+    opacity: 1;
+  }
 }
 
 .settings-container .navbar {
-  // display: flex;
-
-  // align-items: center;
-
-  // width: 100vw;
-  // height: @nav-height;
-
-  // padding: 0 2rem;
-
-  // border-bottom: 1px solid @ios-border;
   background: @brand-primary;
   button.close {
     display: block;
@@ -48,5 +49,68 @@
   span {
     font-size: 1.25rem;
     color: white;
+  }
+}
+
+.settings-body {
+  padding: 1rem 2rem;
+  overflow-y: scroll;
+  height: ~"calc(100% - 4rem)";
+  display: none;
+  // opacity: 0;
+  will-change: opacity;
+  transition: 250ms opacity;
+  &.show {
+    opacity: 1;
+  }
+}
+
+.settings-body .item {
+  display: flex;
+  background: white;
+  margin-bottom: 1rem;
+  .icon-wrapper {
+    padding: 1rem;
+    padding-right: 0;
+    svg {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+.settings-body .frames-container {
+  width: 100%;
+}
+
+.settings-body .frames-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+  h4 {
+    margin: 0;
+  }
+}
+
+.settings-body .frames-container-inner {
+  padding: 1rem;
+}
+
+.settings-body .frame-item {
+  width: 150px;
+  height: 240px;
+  border-radius: 6pt;
+  border: 1px solid @ios-border;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
   }
 }

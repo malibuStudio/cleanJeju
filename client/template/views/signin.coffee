@@ -11,8 +11,12 @@ Template.signin.events
 
     Meteor.loginWithPassword obj.user, obj.password, (err, res) ->
       if err
-        console.log err.reason
+        throwError T9n.get('error.accounts.' + err.reason)
         btn.classList.remove 'loading'
       else
         btn.classList.remove 'loading'
         Router.go('/')
+
+
+
+

@@ -1,0 +1,18 @@
+template(name="alerts")
+  .alerts
+    each alerts
+      +alert
+
+template(name="alert")
+  .alert(role="alert" id="{{_id}}")
+    .alert-inner
+      if error
+        .alert-icon.error
+          +svgClose
+      if success
+        .alert-icon.success
+          +svgCheck
+      p {{message}}
+
+    .alert-close
+      i.icon.close

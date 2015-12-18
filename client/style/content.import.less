@@ -1,4 +1,5 @@
 #content {
+  position: relative;
   display: flex;
 
   height: ~"calc(100% - @{nav-height})";
@@ -7,13 +8,23 @@
     background: @ios-gray;
   }
 }
+
 .content-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex: 1;
   overflow-y: scroll;
   // padding: 8pt 2rem;
+  padding-left: 6rem;
   padding-right: 0;
   padding-bottom: 0;
   padding-top: 0;
-
+  will-change: opacity;
+  &.gray {
+    background: @ios-gray;
+  }
 }
